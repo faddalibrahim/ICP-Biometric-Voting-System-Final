@@ -6,12 +6,11 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.VotingController">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.VotingController">
    <children>
-      <AnchorPane prefHeight="400.0" prefWidth="89.0" style="-fx-background-color: #b0bec5;">
+      <AnchorPane prefHeight="601.0" prefWidth="90.0" style="-fx-background-color: #b0bec5;">
          <children>
-            <JFXButton fx:id="presidentButton" layoutY="96.0" prefHeight="55.0" prefWidth="89.0" style="-fx-background-color: #cfd8dc;" text=" " textOverrun="CLIP">
+            <JFXButton fx:id="presidentButton" layoutX="1.0" layoutY="202.0" prefHeight="55.0" prefWidth="89.0" style="-fx-background-color: #cfd8dc;" text=" " textOverrun="CLIP">
                <graphic>
                   <ImageView fx:id="presidentImage" fitHeight="55.0" fitWidth="89.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -20,8 +19,8 @@
                   </ImageView>
                </graphic>
             </JFXButton>
-            <Label layoutX="14.0" layoutY="161.0" text="President" />
-            <JFXButton fx:id="parliamentButton" layoutY="220.0" prefHeight="55.0" prefWidth="89.0" style="-fx-background-color: #cfd8dc;" text=" " textOverrun="CLIP">
+            <Label layoutX="14.0" layoutY="267.0" text="President" />
+            <JFXButton fx:id="parliamentButton" layoutY="317.0" prefHeight="55.0" prefWidth="89.0" style="-fx-background-color: #cfd8dc;" text=" " textOverrun="CLIP">
                <graphic>
                   <ImageView fx:id="parliamentImage" fitHeight="55.0" fitWidth="89.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -30,9 +29,51 @@
                   </ImageView>
                </graphic>
             </JFXButton>
-            <Label layoutX="9.0" layoutY="285.0" text="Parliament" />
+            <Label layoutX="9.0" layoutY="382.0" text="Parliament" />
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="88.0" layoutY="1.0" prefHeight="400.0" prefWidth="612.0" />
+      <AnchorPane fx:id="candidateDisplayPane" layoutX="91.0" layoutY="1.0" prefHeight="600.0" prefWidth="714.0" style="-fx-background-color: #bdbdbd;">
+         <children>
+            <JFXButton fx:id="ndcPresident" layoutX="7.0" layoutY="7.0" prefHeight="194.0" prefWidth="332.0" style="-fx-background-color: #d7ccc8;" text=" " textOverrun="CLIP">
+               <graphic>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/ndc.jpg" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="nppPresident" layoutX="7.0" layoutY="331.0" prefHeight="194.0" prefWidth="332.0" style="-fx-background-color: #ffccbc;" text=" " textOverrun="CLIP">
+               <graphic>
+                  <ImageView fitHeight="176.0" fitWidth="191.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/npp.jpg" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="ndpPresident" layoutX="378.0" layoutY="7.0" prefHeight="194.0" prefWidth="332.0" style="-fx-background-color: #e0e0e0#e0e0e0;" text=" " textOverrun="CLIP">
+               <graphic>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/ndp.jpg" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="pncPresident" layoutX="378.0" layoutY="331.0" prefHeight="194.0" prefWidth="332.0" style="-fx-background-color: #b0bec5#b0bec5;" text=" ">
+               <graphic>
+                  <ImageView fitHeight="176.0" fitWidth="223.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/pnc.jpg" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <Label fx:id="ndcCandidate" layoutX="7.0" layoutY="211.0" prefHeight="38.0" prefWidth="264.0" text="Candidate:" />
+            <Label fx:id="ndpCandidate" layoutX="378.0" layoutY="211.0" prefHeight="38.0" prefWidth="264.0" text="Candidate:" />
+            <Label fx:id="nppCandidate" layoutX="7.0" layoutY="537.0" prefHeight="38.0" prefWidth="264.0" text="Candidate:" />
+            <Label fx:id="pncCandidate" layoutX="378.0" layoutY="537.0" prefHeight="38.0" prefWidth="264.0" text="Candidate:" />
+         </children></AnchorPane>
    </children>
 </AnchorPane>
