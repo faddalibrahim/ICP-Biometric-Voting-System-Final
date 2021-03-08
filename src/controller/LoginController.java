@@ -41,10 +41,13 @@ public class LoginController extends Application {
     @FXML
     void initialize() {
         loginAuthenticateButton.setOnAction(actionEvent -> {
-            authenticateVoter();
+            try {
+                authenticateVoter();
+            }catch (IOException e) {
+                e.printStackTrace();
+            }
         });
 
-        loginAuthenticationNotification.setVisible(false);
     }
 
     @Override
@@ -63,21 +66,20 @@ public class LoginController extends Application {
     /* Helper Methods */
 
     //This is just a basic authentication for when I was connecting the scenes. Change it to your own authentication (checking the database)
-    private void authenticateVoter() {
+    private void authenticateVoter() throws IOException {
         //getting the main window
         loginAuthenticateButton.getScene().getWindow().hide();
 
-        if(!loginVoterID.getText().toString().trim().equals("")){
-            Stage mainPageStage = new Stage();
-            try {
-                Parent root = FXMLLoader.load(getClass().getResource("/view/mainPage.fxml"));
-                Scene mainPageScene = new Scene(root, 700, 400);
-                mainPageStage.setScene(mainPageScene);
-                mainPageStage.show();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+        if(!loginVoterID.getText().trim().equals("")){
+            loginAuthenticationNotification.setText("Authentication Passed");
 
+            Stage mainPageStage = new Stage();
+            Parent root = FXMLLoader.load(getClass().getResource("/view/mainPage.fxml"));
+            Scene mainPageScene = new Scene(root, 700, 400);
+            mainPageStage.setScene(mainPageScene);
+            mainPageStage.show();
+        } else {
+            loginAuthenticationNotification.setText("Authentication Failed.");   //The scene changes too quickly, but if you can make this show in time before the scene changes, that'd be cool
         }
     }
 
