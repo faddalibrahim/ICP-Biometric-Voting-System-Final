@@ -1,12 +1,18 @@
 package controller;
 
 import com.jfoenix.controls.JFXButton;
+
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 public class VotingController {
 
@@ -74,9 +80,29 @@ public class VotingController {
         votingPresidentButton.setOnAction(actionEvent -> {
             displayCandidatePane();
         });
+
+        votingBackButton.setOnAction(actionEvent -> {
+            try {
+                goBack();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
     }
 
+
+    /*Helper Methods*/
     private void displayCandidatePane() {
         candidateDisplayPane.setVisible(true);
+    }
+
+    private void goBack() throws IOException {
+        Stage mainStage = (Stage) votingPresidentButton.getScene().getWindow();
+        votingPresidentButton.getScene().getWindow().hide();
+
+        Parent root = FXMLLoader.load(getClass().getResource("/view/mainPage.fxml"));
+        Scene mainPageScene = new Scene(root, 700, 400);
+        mainStage.setScene(mainPageScene);
+        mainStage.show();
     }
 }
