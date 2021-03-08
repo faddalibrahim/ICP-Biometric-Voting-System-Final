@@ -6,7 +6,6 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.VotingController">
    <children>
       <AnchorPane prefHeight="601.0" prefWidth="90.0" style="-fx-background-color: #b0bec5;">
@@ -80,7 +79,7 @@
                   </ImageView>
                </graphic>
             </JFXButton>
-            <Label fx:id="vptingNDCCandidate" layoutX="7.0" layoutY="211.0" prefHeight="38.0" prefWidth="264.0" text="Candidate:" />
+            <Label fx:id="votingNDCCandidate" layoutX="7.0" layoutY="211.0" prefHeight="38.0" prefWidth="264.0" text="Candidate:" />
             <Label fx:id="votingNDPCandidate" layoutX="378.0" layoutY="211.0" prefHeight="38.0" prefWidth="264.0" text="Candidate:" />
             <Label fx:id="votingNPPCandidate" layoutX="7.0" layoutY="537.0" prefHeight="38.0" prefWidth="264.0" text="Candidate:" />
             <Label fx:id="votingPNCCandidate" layoutX="378.0" layoutY="537.0" prefHeight="38.0" prefWidth="264.0" text="Candidate:" />

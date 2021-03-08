@@ -26,6 +26,15 @@ public class VotingController {
     private Label votingPresidentLabel;
 
     @FXML
+    private JFXButton votingBackButton;
+
+    @FXML
+    private JFXButton votingResultsButton;
+
+    @FXML
+    private Label votingResultsLabel;
+
+    @FXML
     private AnchorPane candidateDisplayPane;
 
     @FXML
@@ -41,16 +50,16 @@ public class VotingController {
     private JFXButton votingPNCPresident;
 
     @FXML
-    private Label ndcCandidate;
+    private Label vptingNDCCandidate;
 
     @FXML
-    private Label ndpCandidate;
+    private Label votingNDPCandidate;
 
     @FXML
-    private Label nppCandidate;
+    private Label votingNPPCandidate;
 
     @FXML
-    private Label pncCandidate;
+    private Label votingPNCCandidate;
 
     @FXML
     void initialize() {
