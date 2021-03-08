@@ -6,11 +6,12 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
+
 <AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.VotingController">
    <children>
       <AnchorPane prefHeight="601.0" prefWidth="90.0" style="-fx-background-color: #b0bec5;">
          <children>
-            <JFXButton fx:id="votingPresidentButton" buttonType="RAISED" layoutX="1.0" layoutY="243.0" prefHeight="55.0" prefWidth="89.0" style="-fx-background-color: #cfd8dc;" text=" " textOverrun="CLIP">
+            <JFXButton fx:id="votingPresidentButton" buttonType="RAISED" layoutX="4.0" layoutY="243.0" prefHeight="65.0" prefWidth="78.0" style="-fx-background-color: #cfd8dc;" text=" " textOverrun="CLIP">
                <graphic>
                   <ImageView fx:id="presidentImage" fitHeight="55.0" fitWidth="89.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -20,6 +21,25 @@
                </graphic>
             </JFXButton>
             <Label fx:id="votingPresidentLabel" layoutX="14.0" layoutY="308.0" text="President" />
+            <JFXButton fx:id="votingBackButton" buttonType="RAISED" layoutX="10.0" layoutY="541.0" prefHeight="53.0" prefWidth="41.0" text=" " textOverrun="CLIP">
+               <graphic>
+                  <ImageView fitHeight="43.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/icons8-back-64.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="votingResultsButton" buttonType="RAISED" layoutX="4.0" layoutY="339.0" prefHeight="65.0" prefWidth="82.0" style="-fx-background-color: #cfd8dc;" text=" " textOverrun="CLIP">
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/icons8-elections-64%20(2).png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <Label fx:id="votingResultsLabel" layoutX="12.0" layoutY="404.0" prefHeight="16.0" prefWidth="67.0" text="Results" />
          </children>
       </AnchorPane>
       <AnchorPane fx:id="candidateDisplayPane" layoutX="91.0" prefHeight="601.0" prefWidth="714.0" style="-fx-background-color: #bdbdbd;">
@@ -60,10 +80,11 @@
                   </ImageView>
                </graphic>
             </JFXButton>
-            <Label fx:id="ndcCandidate" layoutX="7.0" layoutY="211.0" prefHeight="38.0" prefWidth="264.0" text="Candidate:" />
-            <Label fx:id="ndpCandidate" layoutX="378.0" layoutY="211.0" prefHeight="38.0" prefWidth="264.0" text="Candidate:" />
-            <Label fx:id="nppCandidate" layoutX="7.0" layoutY="537.0" prefHeight="38.0" prefWidth="264.0" text="Candidate:" />
-            <Label fx:id="pncCandidate" layoutX="378.0" layoutY="537.0" prefHeight="38.0" prefWidth="264.0" text="Candidate:" />
-         </children></AnchorPane>
+            <Label fx:id="vptingNDCCandidate" layoutX="7.0" layoutY="211.0" prefHeight="38.0" prefWidth="264.0" text="Candidate:" />
+            <Label fx:id="votingNDPCandidate" layoutX="378.0" layoutY="211.0" prefHeight="38.0" prefWidth="264.0" text="Candidate:" />
+            <Label fx:id="votingNPPCandidate" layoutX="7.0" layoutY="537.0" prefHeight="38.0" prefWidth="264.0" text="Candidate:" />
+            <Label fx:id="votingPNCCandidate" layoutX="378.0" layoutY="537.0" prefHeight="38.0" prefWidth="264.0" text="Candidate:" />
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>
