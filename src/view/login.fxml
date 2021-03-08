@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #fafafa;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginController">
+    <children>
+        <Label alignment="CENTER" layoutX="275.0" layoutY="98.0" prefHeight="45.0" prefWidth="163.0" style="-fx-background-color: #607d8;" text="Login" textFill="#2363a6" AnchorPane.leftAnchor="275.0" AnchorPane.rightAnchor="262.0">
+            <font>
+                <Font name="Ubuntu" size="24.0" />
+            </font>
+        </Label>
+        <JFXTextField fx:id="voterID" focusColor="#cd6e6e" layoutX="226.0" layoutY="187.0" prefHeight="26.0" prefWidth="260.0" promptText="VoterID" unFocusColor="#c36262">
+            <font>
+                <Font name="Ubuntu" size="20.0" />
+            </font>
+        </JFXTextField>
+        <JFXButton fx:id="authenticateButton" buttonType="RAISED" layoutX="259.0" layoutY="268.0" prefHeight="32.0" prefWidth="182.0" ripplerFill="#c31919" style="-fx-background-color: #546e7a;" text="Authenticate">
+            <font>
+                <Font name="Ubuntu" size="13.0" />
+            </font>
+        </JFXButton>
+        <ImageView fitHeight="65.0" fitWidth="68.0" layoutX="212.0" layoutY="88.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../assets/icons8-elections-64.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="32.0" fitWidth="29.0" layoutX="183.0" layoutY="186.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../assets/icons8-security-pass-64.png" />
+            </image>
+        </ImageView>
+    </children>
+</AnchorPane>

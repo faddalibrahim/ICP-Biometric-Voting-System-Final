@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #e0e0e0;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainPageController">
+   <children>
+      <AnchorPane prefHeight="54.0" prefWidth="700.0" style="-fx-background-color: #bdbdbd;">
+         <children>
+            <JFXButton buttonType="RAISED" layoutX="436.0" layoutY="14.0" prefHeight="26.0" prefWidth="78.0" ripplerFill="#661313" style="-fx-background-color: #546e7a;" text="Results" />
+            <JFXButton buttonType="RAISED" layoutX="522.0" layoutY="14.0" prefHeight="26.0" prefWidth="78.0" ripplerFill="#661313" style="-fx-background-color: #546e7a;" text="Vote" />
+            <JFXButton buttonType="RAISED" layoutX="608.0" layoutY="14.0" prefHeight="26.0" prefWidth="78.0" ripplerFill="#661313" style="-fx-background-color: #546e7a;" text="Log Out" />
+            <ImageView fitHeight="54.0" fitWidth="54.0" layoutX="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/icons8-ghana-48.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="275.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/streamline-icon-browser-window-check@140x140.png" />
+         </image>
+      </ImageView>
+      <Label alignment="CENTER" layoutX="206.0" layoutY="297.0" prefHeight="43.0" prefWidth="288.0" style="-fx-background-color: #90a4ae;" text="WELCOME!">
+         <effect>
+            <Blend />
+         </effect>
+      </Label>
+   </children>
+</AnchorPane>

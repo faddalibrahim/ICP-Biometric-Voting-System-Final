@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.VotingController">
+   <children>
+      <AnchorPane prefHeight="400.0" prefWidth="89.0" style="-fx-background-color: #b0bec5;">
+         <children>
+            <JFXButton fx:id="presidentButton" layoutY="96.0" prefHeight="55.0" prefWidth="89.0" style="-fx-background-color: #cfd8dc;" text=" " textOverrun="CLIP">
+               <graphic>
+                  <ImageView fx:id="presidentImage" fitHeight="55.0" fitWidth="89.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/streamline-icon-business-captain-1@140x140.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <Label layoutX="14.0" layoutY="161.0" text="President" />
+            <JFXButton fx:id="parliamentButton" layoutY="220.0" prefHeight="55.0" prefWidth="89.0" style="-fx-background-color: #cfd8dc;" text=" " textOverrun="CLIP">
+               <graphic>
+                  <ImageView fx:id="parliamentImage" fitHeight="55.0" fitWidth="89.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/streamline-icon-team-hierarchy-1-4@140x140.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <Label layoutX="9.0" layoutY="285.0" text="Parliament" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="88.0" layoutY="1.0" prefHeight="400.0" prefWidth="612.0" />
+   </children>
+</AnchorPane>
