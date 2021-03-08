@@ -17,6 +17,9 @@ public class VotingController {
     private URL location;
 
     @FXML
+    private AnchorPane tabAnchorpane;
+
+    @FXML
     private JFXButton votingPresidentButton;
 
     @FXML
@@ -50,7 +53,7 @@ public class VotingController {
     private JFXButton votingPNCPresident;
 
     @FXML
-    private Label vptingNDCCandidate;
+    private Label votingNDCCandidate;
 
     @FXML
     private Label votingNDPCandidate;
@@ -60,6 +63,9 @@ public class VotingController {
 
     @FXML
     private Label votingPNCCandidate;
+
+    @FXML
+    private AnchorPane resultsAnchorPane;
 
     @FXML
     void initialize() {

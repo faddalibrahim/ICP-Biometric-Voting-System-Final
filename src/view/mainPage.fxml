@@ -11,9 +11,9 @@
    <children>
       <AnchorPane prefHeight="54.0" prefWidth="700.0" style="-fx-background-color: #bdbdbd;">
          <children>
-            <JFXButton buttonType="RAISED" layoutX="436.0" layoutY="14.0" prefHeight="26.0" prefWidth="78.0" ripplerFill="#661313" style="-fx-background-color: #546e7a;" text="Results" />
-            <JFXButton buttonType="RAISED" layoutX="522.0" layoutY="14.0" prefHeight="26.0" prefWidth="78.0" ripplerFill="#661313" style="-fx-background-color: #546e7a;" text="Vote" />
-            <JFXButton buttonType="RAISED" layoutX="608.0" layoutY="14.0" prefHeight="26.0" prefWidth="78.0" ripplerFill="#661313" style="-fx-background-color: #546e7a;" text="Log Out" />
+            <JFXButton fx:id="mainPageResultsButton" buttonType="RAISED" layoutX="436.0" layoutY="14.0" prefHeight="26.0" prefWidth="78.0" ripplerFill="#661313" style="-fx-background-color: #546e7a;" text="Results" />
+            <JFXButton fx:id="mainPageVoteButton" buttonType="RAISED" layoutX="522.0" layoutY="14.0" prefHeight="26.0" prefWidth="78.0" ripplerFill="#661313" style="-fx-background-color: #546e7a;" text="Vote" />
+            <JFXButton fx:id="mainPageLogoutButton" buttonType="RAISED" layoutX="608.0" layoutY="14.0" prefHeight="26.0" prefWidth="78.0" ripplerFill="#661313" style="-fx-background-color: #546e7a;" text="Log Out" />
             <ImageView fitHeight="54.0" fitWidth="54.0" layoutX="14.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../assets/icons8-ghana-48.png" />
@@ -26,7 +26,7 @@
             <Image url="@../assets/streamline-icon-browser-window-check@140x140.png" />
          </image>
       </ImageView>
-      <Label alignment="CENTER" layoutX="206.0" layoutY="297.0" prefHeight="43.0" prefWidth="288.0" style="-fx-background-color: #90a4ae;" text="WELCOME!">
+      <Label fx:id="mainPageWelcomeLabel" alignment="CENTER" layoutX="206.0" layoutY="297.0" prefHeight="43.0" prefWidth="288.0" style="-fx-background-color: #90a4ae;" text="WELCOME!">
          <effect>
             <Blend />
          </effect>

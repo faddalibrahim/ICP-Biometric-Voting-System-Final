@@ -67,11 +67,10 @@ public class LoginController extends Application {
 
     //This is just a basic authentication for when I was connecting the scenes. Change it to your own authentication (checking the database)
     private void authenticateVoter() throws IOException {
-        //getting the main window
-        loginAuthenticateButton.getScene().getWindow().hide();
 
         if(!loginVoterID.getText().trim().equals("")){
             loginAuthenticationNotification.setText("Authentication Passed");
+            loginAuthenticateButton.getScene().getWindow().hide();
 
             Stage mainPageStage = new Stage();
             Parent root = FXMLLoader.load(getClass().getResource("/view/mainPage.fxml"));
