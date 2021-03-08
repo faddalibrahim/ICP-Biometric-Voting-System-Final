@@ -10,7 +10,7 @@
    <children>
       <AnchorPane prefHeight="601.0" prefWidth="90.0" style="-fx-background-color: #b0bec5;">
          <children>
-            <JFXButton fx:id="presidentButton" buttonType="RAISED" layoutX="1.0" layoutY="243.0" prefHeight="55.0" prefWidth="89.0" style="-fx-background-color: #cfd8dc;" text=" " textOverrun="CLIP">
+            <JFXButton fx:id="votingPresidentButton" buttonType="RAISED" layoutX="1.0" layoutY="243.0" prefHeight="55.0" prefWidth="89.0" style="-fx-background-color: #cfd8dc;" text=" " textOverrun="CLIP">
                <graphic>
                   <ImageView fx:id="presidentImage" fitHeight="55.0" fitWidth="89.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -19,12 +19,12 @@
                   </ImageView>
                </graphic>
             </JFXButton>
-            <Label layoutX="14.0" layoutY="308.0" text="President" />
+            <Label fx:id="votingPresidentLabel" layoutX="14.0" layoutY="308.0" text="President" />
          </children>
       </AnchorPane>
       <AnchorPane fx:id="candidateDisplayPane" layoutX="91.0" prefHeight="601.0" prefWidth="714.0" style="-fx-background-color: #bdbdbd;">
          <children>
-            <JFXButton fx:id="ndcPresident" buttonType="RAISED" layoutX="7.0" layoutY="7.0" prefHeight="194.0" prefWidth="332.0" style="-fx-background-color: #d7ccc8;" text=" " textOverrun="CLIP">
+            <JFXButton fx:id="votingNDCPresident" buttonType="RAISED" layoutX="7.0" layoutY="7.0" prefHeight="194.0" prefWidth="332.0" style="-fx-background-color: #d7ccc8;" text=" " textOverrun="CLIP">
                <graphic>
                   <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -33,7 +33,7 @@
                   </ImageView>
                </graphic>
             </JFXButton>
-            <JFXButton fx:id="nppPresident" buttonType="RAISED" layoutX="7.0" layoutY="331.0" prefHeight="194.0" prefWidth="332.0" style="-fx-background-color: #ffccbc;" text=" " textOverrun="CLIP">
+            <JFXButton fx:id="votingNPPPresident" buttonType="RAISED" layoutX="7.0" layoutY="331.0" prefHeight="194.0" prefWidth="332.0" style="-fx-background-color: #ffccbc;" text=" " textOverrun="CLIP">
                <graphic>
                   <ImageView fitHeight="176.0" fitWidth="191.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -42,7 +42,7 @@
                   </ImageView>
                </graphic>
             </JFXButton>
-            <JFXButton fx:id="ndpPresident" buttonType="RAISED" layoutX="378.0" layoutY="7.0" prefHeight="194.0" prefWidth="332.0" style="-fx-background-color: #e0e0e0#e0e0e0;" text=" " textOverrun="CLIP">
+            <JFXButton fx:id="votingNDPPresident" buttonType="RAISED" layoutX="378.0" layoutY="7.0" prefHeight="194.0" prefWidth="332.0" style="-fx-background-color: #e0e0e0#e0e0e0;" text=" " textOverrun="CLIP">
                <graphic>
                   <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -51,7 +51,7 @@
                   </ImageView>
                </graphic>
             </JFXButton>
-            <JFXButton fx:id="pncPresident" buttonType="RAISED" layoutX="378.0" layoutY="331.0" prefHeight="194.0" prefWidth="332.0" style="-fx-background-color: #b0bec5#b0bec5;" text=" ">
+            <JFXButton fx:id="votingPNCPresident" buttonType="RAISED" layoutX="378.0" layoutY="331.0" prefHeight="194.0" prefWidth="332.0" style="-fx-background-color: #b0bec5#b0bec5;" text=" ">
                <graphic>
                   <ImageView fitHeight="176.0" fitWidth="223.0" pickOnBounds="true" preserveRatio="true">
                      <image>
