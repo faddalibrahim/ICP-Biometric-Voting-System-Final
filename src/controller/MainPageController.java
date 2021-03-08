@@ -49,7 +49,7 @@ public class MainPageController {
         Stage votingStage = new Stage();
 
         Parent votingRoot = FXMLLoader.load(getClass().getResource("/view/voting.fxml"));
-        Scene votingScene = new Scene(votingRoot, 805, 601);
+        Scene votingScene = new Scene(votingRoot, 806, 602);
         votingStage.setScene(votingScene);
         votingStage.show();
     }

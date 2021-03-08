@@ -17,7 +17,7 @@ public class VotingController {
     private URL location;
 
     @FXML
-    private AnchorPane tabAnchorpane;
+    private AnchorPane tabAnchorPane;
 
     @FXML
     private JFXButton votingPresidentButton;
@@ -69,6 +69,14 @@ public class VotingController {
 
     @FXML
     void initialize() {
+        candidateDisplayPane.setVisible(false);
 
+        votingPresidentButton.setOnAction(actionEvent -> {
+            displayCandidatePane();
+        });
+    }
+
+    private void displayCandidatePane() {
+        candidateDisplayPane.setVisible(true);
     }
 }

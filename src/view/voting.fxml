@@ -8,7 +8,7 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.VotingController">
    <children>
-      <AnchorPane fx:id="tabAnchorpane" prefHeight="601.0" prefWidth="90.0" style="-fx-background-color: #b0bec5;">
+      <AnchorPane fx:id="tabAnchorPane" prefHeight="601.0" prefWidth="90.0" style="-fx-background-color: #b0bec5;">
          <children>
             <JFXButton fx:id="votingPresidentButton" buttonType="RAISED" layoutX="4.0" layoutY="243.0" prefHeight="65.0" prefWidth="78.0" style="-fx-background-color: #cfd8dc;" text=" " textOverrun="CLIP">
                <graphic>
