@@ -35,6 +35,6 @@
                 <Image url="@../assets/icons8-security-pass-64.png" />
             </image>
         </ImageView>
-      <Label fx:id="loginAuthenticationNotification" layoutX="283.0" layoutY="328.0" prefHeight="32.0" prefWidth="135.0" text=" " />
+      <Label fx:id="loginAuthenticationNotification" layoutX="259.0" layoutY="323.0" prefHeight="32.0" prefWidth="182.0" text=" " />
     </children>
 </AnchorPane>
