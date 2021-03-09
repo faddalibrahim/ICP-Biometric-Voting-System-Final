@@ -42,6 +42,14 @@ public class MainPageController {
             }
         });
 
+        mainPageLogoutButton.setOnAction(actionEvent -> {
+            try {
+                logout();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+
     }
 
     private void changeSceneOnVoteButtonClick() throws IOException {
@@ -52,5 +60,14 @@ public class MainPageController {
         Scene votingScene = new Scene(votingRoot, 806, 602);
         votingStage.setScene(votingScene);
         votingStage.show();
+    }
+
+    private void logout() throws IOException{
+        Stage logoutStage = (Stage) mainPageVoteButton.getScene().getWindow();
+
+        Parent root = FXMLLoader.load(getClass().getResource("/view/login.fxml"));
+        Scene mainPageScene = new Scene(root, 700, 400);
+        logoutStage.setScene(mainPageScene);
+        logoutStage.show();
     }
 }
