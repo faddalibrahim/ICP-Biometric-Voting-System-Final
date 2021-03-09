@@ -2,6 +2,9 @@
   <library name="lib1">
     <CLASSES>
       <root url="file://$USER_HOME$/Downloads/openjfx-11.0.2_linux-x64_bin-sdk/javafx-sdk-11.0.2/lib" />
+      <root url="file://$USER_HOME$/Downloads/Compressed/openjfx-11.0.2_windows-x64_bin-sdk/javafx-sdk-11.0.2/lib" />
+      <root url="jar://$USER_HOME$/Downloads/Compressed/mysql-connector-java-8.0.23/mysql-connector-java-8.0.23/mysql-connector-java-8.0.23.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/jfoenix-9.0.10.jar!/" />
     </CLASSES>
     <JAVADOC />
     <NATIVE>
@@ -9,8 +12,11 @@
     </NATIVE>
     <SOURCES>
       <root url="file://$USER_HOME$/Downloads/openjfx-11.0.2_linux-x64_bin-sdk/javafx-sdk-11.0.2/lib" />
+      <root url="file://$USER_HOME$/Downloads/Compressed/openjfx-11.0.2_windows-x64_bin-sdk/javafx-sdk-11.0.2/lib" />
     </SOURCES>
+    <jarDirectory url="file://$USER_HOME$/Downloads/Compressed/openjfx-11.0.2_windows-x64_bin-sdk/javafx-sdk-11.0.2/lib" recursive="false" />
     <jarDirectory url="file://$USER_HOME$/Downloads/openjfx-11.0.2_linux-x64_bin-sdk/javafx-sdk-11.0.2/lib" recursive="false" />
+    <jarDirectory url="file://$USER_HOME$/Downloads/Compressed/openjfx-11.0.2_windows-x64_bin-sdk/javafx-sdk-11.0.2/lib" recursive="false" type="SOURCES" />
     <jarDirectory url="file://$USER_HOME$/Downloads/openjfx-11.0.2_linux-x64_bin-sdk/javafx-sdk-11.0.2/lib" recursive="false" type="SOURCES" />
   </library>
 </component>

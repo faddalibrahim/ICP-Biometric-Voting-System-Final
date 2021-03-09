@@ -16,15 +16,11 @@
             </font>
         </Label>
         <JFXTextField fx:id="loginVoterID" focusColor="#cd6e6e" layoutX="226.0" layoutY="187.0" prefHeight="26.0" prefWidth="260.0" promptText="VoterID" unFocusColor="#c36262">
-            <font>
-                <Font name="Ubuntu" size="20.0" />
-            </font>
-        </JFXTextField>
+            <font> <Font name="Ubuntu" size="20.0" />
+            </font></JFXTextField>
         <JFXButton fx:id="loginAuthenticateButton" buttonType="RAISED" layoutX="259.0" layoutY="268.0" prefHeight="32.0" prefWidth="182.0" ripplerFill="#b91616" style="-fx-background-color: #90a4ae;" text="Authenticate">
-            <font>
-                <Font name="Ubuntu" size="13.0" />
-            </font>
-        </JFXButton>
+            <font> <Font name="Ubuntu" size="13.0" />
+            </font></JFXButton>
         <ImageView fx:id="logindisplayPicture" fitHeight="65.0" fitWidth="68.0" layoutX="212.0" layoutY="88.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@../assets/icons8-elections-64.png" />
