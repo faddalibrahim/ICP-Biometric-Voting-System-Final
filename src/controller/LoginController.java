@@ -12,12 +12,17 @@ import javafx.stage.Stage;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
 import javafx.fxml.FXML;
+import model.Voter;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ResourceBundle;
 
-public class LoginController extends Application {
+public class LoginController implements Initializable {
 
     @FXML
     private ResourceBundle resources;
@@ -37,8 +42,8 @@ public class LoginController extends Application {
     @FXML
     private Label loginAuthenticationNotification;
 
-    @FXML
-    void initialize() {
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
         loginAuthenticateButton.setOnAction(actionEvent -> {
             try {
                 authenticateVoter();
@@ -49,38 +54,28 @@ public class LoginController extends Application {
 
     }
 
-    @Override
-    public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/view/login.fxml"));
-        primaryStage.setTitle("Ghana Electoral Management System");
-        primaryStage.setScene(new Scene(root, 700, 400));
-
-        primaryStage.show();
-    }
-
-    public static void main(String[] args) {
-        launch(args);
-    }
-
-    /* Helper Methods */
-
-    //This is just a basic authentication for when I was connecting the scenes. Change it to your own authentication (checking the database)
     private void authenticateVoter() throws IOException {
-        Stage mainStage = (Stage) loginAuthenticateButton.getScene().getWindow();
+        double voterId = Double.parseDouble(loginVoterID.getText());
+        Voter voter = Voter.authenticate(voterId);
 
-        if(!loginVoterID.getText().trim().equals("")){
-            loginAuthenticationNotification.setText("Authentication Passed");
-            loginAuthenticateButton.getScene().getWindow().hide();
-
-            Parent root = FXMLLoader.load(getClass().getResource("/view/mainPage.fxml"));
-            Scene mainPageScene = new Scene(root, 700, 400);
-            mainStage.setScene(mainPageScene);
-            mainStage.show();
-        } else {
-            loginAuthenticationNotification.setText("Authentication Failed.");   //The scene changes too quickly, but if you can make this show in time before the scene changes, that'd be cool
+        if(voter.getAuthStatus() == 200){
+            goToMainPage();
         }
+        else if(voter.getAuthStatus() == 403){
+            loginAuthenticationNotification.setText("You have already voted!");
+        }
+        else if(voter.getAuthStatus() == 404){
+            loginAuthenticationNotification.setText("No results found for voter");
+        }
+
     }
 
-
+    private void goToMainPage() throws IOException {
+        Stage mainPageStage = (Stage) loginAuthenticateButton.getScene().getWindow();
+        Parent mainPageRoot = FXMLLoader.load(getClass().getResource("/view/mainPage.fxml"));
+        Scene mainPageScene = new Scene(mainPageRoot, 700, 400);
+        mainPageStage.setScene(mainPageScene);
+        mainPageStage.show();
+    }
 
 }

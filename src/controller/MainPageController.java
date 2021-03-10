@@ -50,16 +50,36 @@ public class MainPageController {
             }
         });
 
+        mainPageResultsButton.setOnAction(actionEvent -> {
+            try {
+                changeSceneOnResultsButtonClick();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+
     }
 
     private void changeSceneOnVoteButtonClick() throws IOException {
-        mainPageVoteButton.getScene().getWindow().hide();
-        Stage votingStage = new Stage();
+        //mainPageVoteButton.getScene().getWindow().hide();
+        Stage votingStage = (Stage) mainPageVoteButton.getScene().getWindow();
+        //Stage votingStage = new Stage();
 
         Parent votingRoot = FXMLLoader.load(getClass().getResource("/view/voting.fxml"));
         Scene votingScene = new Scene(votingRoot, 806, 602);
         votingStage.setScene(votingScene);
         votingStage.show();
+    }
+
+    private void changeSceneOnResultsButtonClick() throws IOException {
+        //mainPageVoteButton.getScene().getWindow().hide();
+        Stage resultsStage = (Stage) mainPageResultsButton.getScene().getWindow();
+        //Stage votingStage = new Stage();
+
+        Parent votingRoot = FXMLLoader.load(getClass().getResource("/view/results.fxml"));
+        Scene resultsScene = new Scene(votingRoot, 806, 602);
+        resultsStage.setScene(resultsScene);
+        resultsStage.show();
     }
 
     private void logout() throws IOException{

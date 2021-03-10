@@ -6,6 +6,7 @@ public class Person {
     private String name;
     private String dob;
     private String gender;
+    private int authStatus = 0;
 
     /**
      * Constructor
@@ -18,6 +19,8 @@ public class Person {
         this.dob = dob;
         this.gender = gender;
     }
+
+    public Person(){}
 
 
     /**
@@ -45,6 +48,14 @@ public class Person {
     }
 
     /**
+     * Accessor Method:getAuthStatus()
+     * @return authStatus
+     */
+    public int getAuthStatus(){
+        return this.authStatus;
+    }
+
+    /**
      * Mutator Method:setName()
      * @param newName
      */
@@ -66,6 +77,14 @@ public class Person {
      */
     public void setGender(String newGender){
         this.name = newGender;
+    }
+
+    /**
+     * Mutator Method:setAuthStatus()
+     * @param newAuthStatus
+     */
+    public void setAuthStatus(int newAuthStatus){
+        this.authStatus = newAuthStatus;
     }
 
     public static Connection getConnection(){
