@@ -3,6 +3,7 @@ package model;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.HashMap;
 
 public class Voter extends Person {
     private String pollingStationCode;
@@ -53,11 +54,37 @@ public class Voter extends Person {
         return ballotCount;
     }
 
-    public boolean castVote(String party){
+    public boolean castVote(Candidate candidate, Voter voter){
         Connection conn = Voter.getConnection();
         PreparedStatement st;
+        int updateStatus = 0;
 
-    return true;
+        //update candidates vote count in database
+        try{
+            st = conn.prepareStatement("UPDATE candidates SET votes = ? WHERE id = ?");
+            st.setInt(1, candidate.getVotes()+1);
+            st.setDouble(2, candidate.getId());
+            updateStatus = st.executeUpdate();
+        }catch (Exception err){
+            System.out.println("updating candidate vote count aint successful");
+        }
+
+        //if updating candidates vote count is successful, update has_voted of voter in database
+        if(updateStatus != 0){
+            try{
+                st = conn.prepareStatement("UPDATE voters SET has_voted = ? WHERE id = ?");
+                st.setBoolean(1, true);
+                st.setDouble(2, voter.getId());
+                updateStatus = st.executeUpdate();
+            }catch (Exception err){
+                System.out.println("updating voter's has_voted aint successful");
+            }
+        }else return false;
+
+        return true;
+        //increase candidate vote count in database
+
+        //set user's hasVoted to true and update in database
     }
 
     public static Voter authenticate(double voterId){

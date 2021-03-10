@@ -84,17 +84,18 @@ public class VotingController {
     @FXML
     private void castVote(ActionEvent event){
         if(event.getSource() == votingNDCPresident){
-            System.out.println(newVoter.getDob());
-            newVoter.castVote("NDC");
+            //if(newVoter.castVote("NDC",candidates.get("NDC").getVotes())) goToThankYouPage();
+            // display an error if something goes wrong
+            newVoter.castVote(candidates.get("NDC"),newVoter);
         }
         else if(event.getSource() == votingNPPPresident){
-            newVoter.castVote("NPP");
+            newVoter.castVote(candidates.get("NPP"),newVoter);
         }
         else if(event.getSource() == votingNDPPresident){
-            newVoter.castVote("NDP");
+            newVoter.castVote(candidates.get("NDP"),newVoter);
         }
         else if(event.getSource() == votingPNCPresident){
-            newVoter.castVote("PNC");
+            newVoter.castVote(candidates.get("PNC"),newVoter);
         }
     }
 
