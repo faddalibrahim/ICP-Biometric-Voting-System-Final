@@ -82,9 +82,6 @@ public class Voter extends Person {
         }else return false;
 
         return true;
-        //increase candidate vote count in database
-
-        //set user's hasVoted to true and update in database
     }
 
     public static Voter authenticate(double voterId){

@@ -82,20 +82,26 @@ public class VotingController {
     HashMap<String, Candidate> candidates;
 
     @FXML
-    private void castVote(ActionEvent event){
+    private void castVote(ActionEvent event) throws IOException {
+        /*idea to minimize this code later
+        * set a label to hold the name of the party clicked
+        * now do newVoter.castVote(candidates.get(label.getText()),newVoter)
+        * */
+
+
         if(event.getSource() == votingNDCPresident){
             //if(newVoter.castVote("NDC",candidates.get("NDC").getVotes())) goToThankYouPage();
             // display an error if something goes wrong
-            newVoter.castVote(candidates.get("NDC"),newVoter);
+            if(newVoter.castVote(candidates.get("NDC"),newVoter)) goToResultsPage();
         }
         else if(event.getSource() == votingNPPPresident){
-            newVoter.castVote(candidates.get("NPP"),newVoter);
+            if(newVoter.castVote(candidates.get("NPP"),newVoter)) goToResultsPage();
         }
         else if(event.getSource() == votingNDPPresident){
-            newVoter.castVote(candidates.get("NDP"),newVoter);
+            if(newVoter.castVote(candidates.get("NDP"),newVoter)) goToResultsPage();
         }
         else if(event.getSource() == votingPNCPresident){
-            newVoter.castVote(candidates.get("PNC"),newVoter);
+            if(newVoter.castVote(candidates.get("PNC"),newVoter)) goToResultsPage();
         }
     }
 
@@ -142,6 +148,16 @@ public class VotingController {
         Scene mainPageScene = new Scene(root, 700, 400);
         mainStage.setScene(mainPageScene);
         mainStage.show();
+    }
+
+    private void goToResultsPage() throws IOException {
+        Stage resultsStage = (Stage) votingPresidentButton.getScene().getWindow();
+        votingPresidentButton.getScene().getWindow().hide();
+
+        Parent root = FXMLLoader.load(getClass().getResource("/view/results.fxml"));
+        Scene resultsPageScene = new Scene(root, 700, 400);
+        resultsStage.setScene(resultsPageScene);
+        resultsStage.show();
     }
 
     public void getVoterFromMainPage(Voter voter){
