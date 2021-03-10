@@ -4,7 +4,10 @@ import com.jfoenix.controls.JFXButton;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.HashMap;
 import java.util.ResourceBundle;
+
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -13,6 +16,8 @@ import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import model.Candidate;
+import model.Voter;
 
 public class VotingController {
 
@@ -73,8 +78,30 @@ public class VotingController {
     @FXML
     private AnchorPane resultsAnchorPane;
 
+    Voter newVoter;
+    HashMap<String, Candidate> candidates;
+
     @FXML
-    void initialize() {
+    private void castVote(ActionEvent event){
+        if(event.getSource() == votingNDCPresident){
+            System.out.println(newVoter.getDob());
+            newVoter.castVote("NDC");
+        }
+        else if(event.getSource() == votingNPPPresident){
+            newVoter.castVote("NPP");
+        }
+        else if(event.getSource() == votingNDPPresident){
+            newVoter.castVote("NDP");
+        }
+        else if(event.getSource() == votingPNCPresident){
+            newVoter.castVote("PNC");
+        }
+    }
+
+    @FXML
+    void initialize() throws IOException {
+        fetchCandidates();
+
         candidateDisplayPane.setVisible(false);
 
         votingPresidentButton.setOnAction(actionEvent -> {
@@ -90,10 +117,20 @@ public class VotingController {
         });
     }
 
+    private void fetchCandidates() throws IOException {
+        candidates = Candidate.getCandidates();
+        System.out.println(candidates);
+    }
+
 
     /*Helper Methods*/
+
     private void displayCandidatePane() {
         candidateDisplayPane.setVisible(true);
+    }
+
+    private void castVote(){
+        System.out.println("yoooo");
     }
 
     private void goBack() throws IOException {
@@ -104,5 +141,12 @@ public class VotingController {
         Scene mainPageScene = new Scene(root, 700, 400);
         mainStage.setScene(mainPageScene);
         mainStage.show();
+    }
+
+    public void getVoterFromMainPage(Voter voter){
+        newVoter = voter;
+        //System.out.println("voter data has been collected");
+        System.out.println("voter has been received on the voting page");
+        //System.out.println(voter.getName());
     }
 }

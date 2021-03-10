@@ -59,7 +59,7 @@ public class LoginController implements Initializable {
         Voter voter = Voter.authenticate(voterId);
 
         if(voter.getAuthStatus() == 200){
-            goToMainPage();
+            goToMainPage(voter);
         }
         else if(voter.getAuthStatus() == 403){
             loginAuthenticationNotification.setText("You have already voted!");
@@ -70,12 +70,19 @@ public class LoginController implements Initializable {
 
     }
 
-    private void goToMainPage() throws IOException {
-        Stage mainPageStage = (Stage) loginAuthenticateButton.getScene().getWindow();
-        Parent mainPageRoot = FXMLLoader.load(getClass().getResource("/view/mainPage.fxml"));
-        Scene mainPageScene = new Scene(mainPageRoot, 700, 400);
-        mainPageStage.setScene(mainPageScene);
-        mainPageStage.show();
+    private void goToMainPage(Voter voter) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/mainPage.fxml"));
+        Parent mainPageRoot = loader.load();
+
+        MainPageController mainPageController = loader.getController();
+        mainPageController.getVoterFromLoginPage(voter);
+
+
+        Stage stage = (Stage) loginAuthenticateButton.getScene().getWindow();
+        Scene scene = new Scene(mainPageRoot);
+        stage.setScene(scene);
+        stage.show();
+
     }
 
 }

@@ -1,8 +1,10 @@
 package model;
 
 import java.sql.*;
+import java.util.HashMap;
 
 public class Person {
+    private double id;
     private String name;
     private String dob;
     private String gender;
@@ -14,7 +16,8 @@ public class Person {
      * @param dob
      * @param gender
      */
-    public Person(String name, String dob, String gender){
+    public Person(double id, String name, String dob, String gender){
+        this.id = id;
         this.name = name;
         this.dob = dob;
         this.gender = gender;
@@ -22,6 +25,13 @@ public class Person {
 
     public Person(){}
 
+    /**
+     * Accessor Method:getId()
+     * @return id
+     */
+    public double getId(){
+        return this.id;
+    }
 
     /**
      * Accessor Method:getName()
@@ -53,6 +63,18 @@ public class Person {
      */
     public int getAuthStatus(){
         return this.authStatus;
+    }
+
+
+
+
+
+    /**
+     * Mutator Method:setId()
+     * @param newId
+     */
+    public void setName(double newId){
+        this.id = newId;
     }
 
     /**
@@ -98,4 +120,5 @@ public class Person {
             return null;
         }
     }
+
 }

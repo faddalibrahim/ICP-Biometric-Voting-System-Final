@@ -5,7 +5,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 public class Voter extends Person {
-    private double id;
     private String pollingStationCode;
     private static int ballotCount = 0;
     private boolean hasVoted = false;
@@ -22,8 +21,7 @@ public class Voter extends Person {
      */
 
     public Voter(double id, String polling_station_code, String name, String gender, String dob, boolean hasVoted) {
-        super(name, dob, gender);
-        this.id = id;
+        super(id,name, dob, gender);
         this.pollingStationCode = polling_station_code;
         this.hasVoted = hasVoted;
     }
@@ -53,6 +51,13 @@ public class Voter extends Person {
      */
     public int ballotCount() {
         return ballotCount;
+    }
+
+    public boolean castVote(String party){
+        Connection conn = Voter.getConnection();
+        PreparedStatement st;
+
+    return true;
     }
 
     public static Voter authenticate(double voterId){

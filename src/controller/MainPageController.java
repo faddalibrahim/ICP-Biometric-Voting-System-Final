@@ -11,6 +11,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import model.Voter;
 
 public class MainPageController {
 
@@ -32,8 +33,12 @@ public class MainPageController {
     @FXML
     private Label mainPageWelcomeLabel;
 
+    Voter newVoter; // from the login page
+
     @FXML
     void initialize() {
+        //mainPageWelcomeLabel.setText("Welcome" + newVoter.getName());
+
         mainPageVoteButton.setOnAction(actionEvent -> {
             try {
                 changeSceneOnVoteButtonClick();
@@ -61,14 +66,20 @@ public class MainPageController {
     }
 
     private void changeSceneOnVoteButtonClick() throws IOException {
-        //mainPageVoteButton.getScene().getWindow().hide();
-        Stage votingStage = (Stage) mainPageVoteButton.getScene().getWindow();
-        //Stage votingStage = new Stage();
 
-        Parent votingRoot = FXMLLoader.load(getClass().getResource("/view/voting.fxml"));
-        Scene votingScene = new Scene(votingRoot, 806, 602);
-        votingStage.setScene(votingScene);
-        votingStage.show();
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/voting.fxml"));
+        Parent votingRoot = loader.load();
+
+        VotingController votingController = loader.getController();
+        votingController.getVoterFromMainPage(newVoter);
+
+
+        Stage stage = (Stage) mainPageVoteButton.getScene().getWindow();
+        Scene scene = new Scene(votingRoot);
+        stage.setScene(scene);
+        stage.show();
+        //System.out.println(newVoter.getGender());
     }
 
     private void changeSceneOnResultsButtonClick() throws IOException {
@@ -89,5 +100,16 @@ public class MainPageController {
         Scene mainPageScene = new Scene(root, 700, 400);
         logoutStage.setScene(mainPageScene);
         logoutStage.show();
+    }
+
+    public void getVoterFromLoginPage(Voter voter){
+        System.out.println(voter.getName());
+        newVoter = voter;
+        System.out.println(newVoter.getName());
+        //newVoter = voter;
+        System.out.println("voter has been received on the main page");
+        //newVoter.getName()
+        mainPageWelcomeLabel.setText("Welcome " + voter.getName());
+
     }
 }

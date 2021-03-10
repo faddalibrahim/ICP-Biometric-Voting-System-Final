@@ -43,7 +43,7 @@
       </AnchorPane>
       <AnchorPane fx:id="candidateDisplayPane" layoutX="91.0" prefHeight="601.0" prefWidth="714.0" style="-fx-background-color: #bdbdbd;">
          <children>
-            <JFXButton fx:id="votingNDCPresident" buttonType="RAISED" layoutX="7.0" layoutY="7.0" prefHeight="194.0" prefWidth="332.0" style="-fx-background-color: #d7ccc8;" text=" " textOverrun="CLIP">
+            <JFXButton fx:id="votingNDCPresident" buttonType="RAISED" layoutX="7.0" layoutY="7.0" onAction="#castVote" prefHeight="194.0" prefWidth="332.0" style="-fx-background-color: #d7ccc8;" text=" " textOverrun="CLIP">
                <graphic>
                   <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -52,7 +52,7 @@
                   </ImageView>
                </graphic>
             </JFXButton>
-            <JFXButton fx:id="votingNPPPresident" buttonType="RAISED" layoutX="7.0" layoutY="331.0" prefHeight="194.0" prefWidth="332.0" style="-fx-background-color: #ffccbc;" text=" " textOverrun="CLIP">
+            <JFXButton fx:id="votingNPPPresident" buttonType="RAISED" layoutX="7.0" layoutY="331.0" onAction="#castVote" prefHeight="194.0" prefWidth="332.0" style="-fx-background-color: #ffccbc;" text=" " textOverrun="CLIP">
                <graphic>
                   <ImageView fitHeight="176.0" fitWidth="191.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -61,7 +61,7 @@
                   </ImageView>
                </graphic>
             </JFXButton>
-            <JFXButton fx:id="votingNDPPresident" buttonType="RAISED" layoutX="378.0" layoutY="7.0" prefHeight="194.0" prefWidth="332.0" style="-fx-background-color: #e0e0e0#e0e0e0;" text=" " textOverrun="CLIP">
+            <JFXButton fx:id="votingNDPPresident" buttonType="RAISED" layoutX="378.0" layoutY="7.0" onAction="#castVote" prefHeight="194.0" prefWidth="332.0" style="-fx-background-color: #e0e0e0#e0e0e0;" text=" " textOverrun="CLIP">
                <graphic>
                   <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -70,7 +70,7 @@
                   </ImageView>
                </graphic>
             </JFXButton>
-            <JFXButton fx:id="votingPNCPresident" buttonType="RAISED" layoutX="378.0" layoutY="331.0" prefHeight="194.0" prefWidth="332.0" style="-fx-background-color: #b0bec5#b0bec5;" text=" ">
+            <JFXButton fx:id="votingPNCPresident" buttonType="RAISED" layoutX="378.0" layoutY="331.0" onAction="#castVote" prefHeight="194.0" prefWidth="332.0" style="-fx-background-color: #b0bec5#b0bec5;" text=" ">
                <graphic>
                   <ImageView fitHeight="176.0" fitWidth="223.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -79,10 +79,10 @@
                   </ImageView>
                </graphic>
             </JFXButton>
-            <Label fx:id="votingNDCCandidate" layoutX="7.0" layoutY="211.0" prefHeight="38.0" prefWidth="264.0" text="Candidate:" />
-            <Label fx:id="votingNDPCandidate" layoutX="378.0" layoutY="211.0" prefHeight="38.0" prefWidth="264.0" text="Candidate:" />
-            <Label fx:id="votingNPPCandidate" layoutX="7.0" layoutY="537.0" prefHeight="38.0" prefWidth="264.0" text="Candidate:" />
-            <Label fx:id="votingPNCCandidate" layoutX="378.0" layoutY="537.0" prefHeight="38.0" prefWidth="264.0" text="Candidate:" />
+            <Label fx:id="votingNDCCandidate" layoutX="7.0" layoutY="211.0" prefHeight="38.0" prefWidth="264.0" text="Candidate: John Dramani Mahama" />
+            <Label fx:id="votingNDPCandidate" layoutX="378.0" layoutY="211.0" prefHeight="38.0" prefWidth="264.0" text="Candidate: Nana Konadu Agyemang-Rawlings" />
+            <Label fx:id="votingNPPCandidate" layoutX="7.0" layoutY="537.0" prefHeight="38.0" prefWidth="264.0" text="Candidate: Nana Addo Dankwa Akuffo Addo" />
+            <Label fx:id="votingPNCCandidate" layoutX="378.0" layoutY="537.0" prefHeight="38.0" prefWidth="264.0" text="Candidate: David Apasera" />
          </children>
       </AnchorPane>
       <AnchorPane fx:id="resultsAnchorPane" prefHeight="200.0" prefWidth="200.0" />
