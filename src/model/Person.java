@@ -3,7 +3,7 @@ package model;
 import java.sql.*;
 import java.util.HashMap;
 
-public class Person {
+public abstract class Person implements PersonInterface {
     private double id;
     private String name;
     private String dob;
@@ -73,7 +73,7 @@ public class Person {
      * Mutator Method:setId()
      * @param newId
      */
-    public void setName(double newId){
+    public void setId(double newId){
         this.id = newId;
     }
 
