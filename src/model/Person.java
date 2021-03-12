@@ -3,7 +3,7 @@ package model;
 import java.sql.*;
 import java.util.HashMap;
 
-public class Person {
+public abstract class Person implements PersonInterface {
     private double id;
     private String name;
     private String dob;
@@ -73,7 +73,7 @@ public class Person {
      * Mutator Method:setId()
      * @param newId
      */
-    public void setName(double newId){
+    public void setId(double newId){
         this.id = newId;
     }
 
@@ -112,7 +112,7 @@ public class Person {
     public static Connection getConnection(){
         Connection conn;
         try {
-            conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/election", "excel", "Galatians2:20");
+            conn = DriverManager.getConnection(Database.getUrl(), Database.getUser(), Database.getPassword());
             System.out.println("yoooo database is connected successfully");
             return conn;
         } catch (Exception err) {
