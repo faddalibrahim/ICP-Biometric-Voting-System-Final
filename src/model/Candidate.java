@@ -60,6 +60,20 @@ public class Candidate extends Person{
     }
 
 
+    /**
+     * Auxiliary method
+     * @return
+     */
+    @Override
+    public String toString() {
+        return "Candidate{" +
+                "name='" + getName() + '\'' +
+                "party='" + party + '\'' +
+                ", votes=" + votes +
+                '}';
+    }
+
+
     public static HashMap<String, model.Candidate> getCandidates() {
         HashMap<String, model.Candidate> candidatesMap = new HashMap();
 

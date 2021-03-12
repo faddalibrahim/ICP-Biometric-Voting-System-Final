@@ -113,6 +113,7 @@ public abstract class Person implements PersonInterface {
         Connection conn;
         try {
             conn = DriverManager.getConnection(Database.getUrl(), Database.getUser(), Database.getPassword());
+
             System.out.println("yoooo database is connected successfully");
             return conn;
         } catch (Exception err) {
