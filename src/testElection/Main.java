@@ -17,12 +17,16 @@ public class Main {
         /* Authenticating the voter */
         System.out.println("\n Please enter your voter ID: \n");
         long voterID = consoleInput.nextLong();
+        authenticateVoter(voterID);
+
+        /* Displaying candidates */
+        System.out.println("Which candidate do you want to vote for? \n");
 
 
     }
 
 
-    public void authenticateVoter(Long voterID) {
+    private static void authenticateVoter(Long voterID) {
         if(Voter.getVoterIDList().contains(voterID)) {
             System.out.println("Voter Authenticated!");
         } else {

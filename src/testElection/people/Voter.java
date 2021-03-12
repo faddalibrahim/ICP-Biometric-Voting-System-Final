@@ -62,11 +62,11 @@ public class Voter extends Person {
         return true;
     }
 
-    private void addVoterID(Long ID) {
+    private static void addVoterID(Long ID) {
         voterIDList.add(ID);
     }
 
-    private void readVoterID() throws FileNotFoundException {
+    private static void readVoterID() throws FileNotFoundException {
         Scanner readVoterID = new Scanner(new FileInputStream("/files/voterIDs.txt"));
         while (readVoterID.hasNextLine()) {
             addVoterID(Long.parseLong(readVoterID.nextLine()));
@@ -74,6 +74,11 @@ public class Voter extends Person {
     }
 
     public static ArrayList<Long> getVoterIDList() {
+        try {
+            readVoterID();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
         return voterIDList;
     }
 }
