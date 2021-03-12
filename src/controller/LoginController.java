@@ -49,12 +49,14 @@ public class LoginController implements Initializable {
                 authenticateVoter();
             }catch (IOException e) {
                 e.printStackTrace();
+            } catch (NumberFormatException e) {
+                e.printStackTrace();
             }
         });
 
     }
 
-    private void authenticateVoter() throws IOException {
+    private void authenticateVoter() throws IOException, NumberFormatException {
         double voterId = Double.parseDouble(loginVoterID.getText());
         Voter voter = Voter.authenticate(voterId);
 

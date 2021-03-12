@@ -66,7 +66,7 @@ public class Voter extends Person {
             st.setDouble(2, candidate.getId());
             updateStatus = st.executeUpdate();
         }catch (Exception err){
-            System.out.println("updating candidate vote count aint successful");
+            System.out.println("updating candidate vote count not successful");
         }
 
         //if updating candidates vote count is successful, update has_voted of voter in database
@@ -77,7 +77,7 @@ public class Voter extends Person {
                 st.setDouble(2, voter.getId());
                 updateStatus = st.executeUpdate();
             }catch (Exception err){
-                System.out.println("updating voter's has_voted aint successful");
+                System.out.println("updating voter's has_voted not successful");
             }
         }else return false;
 
