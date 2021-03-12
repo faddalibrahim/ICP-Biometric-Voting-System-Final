@@ -11,7 +11,7 @@ import java.util.HashMap;
  * Accessibility Modifier:public
  */
 
-public class Candidate extends Person {
+public class Candidate extends Person{
     private String party;
     private int votes;
 
