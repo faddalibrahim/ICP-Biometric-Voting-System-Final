@@ -112,7 +112,7 @@ public class Person {
     public static Connection getConnection(){
         Connection conn;
         try {
-            conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/election", "", "");
+            conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/election", "excel", "Galatians2:20");
             System.out.println("yoooo database is connected successfully");
             return conn;
         } catch (Exception err) {
