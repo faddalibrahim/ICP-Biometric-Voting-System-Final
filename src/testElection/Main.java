@@ -14,11 +14,20 @@ public class Main {
 	// write your code here
         System.out.println("Welcome to the Ghana Electoral Management Platform.");
 
+        /* Authenticating the voter */
         System.out.println("\n Please enter your voter ID: \n");
         long voterID = consoleInput.nextLong();
-        if(Voter.getVoterIDList().contains(voterID)) {
-            System.out.println();
-        }
 
+
+    }
+
+
+    public void authenticateVoter(Long voterID) {
+        if(Voter.getVoterIDList().contains(voterID)) {
+            System.out.println("Voter Authenticated!");
+        } else {
+            System.out.println("Voter ID not found!");
+            System.exit(0);
+        }
     }
 }

@@ -1,6 +1,6 @@
 package testElection.people;
 
-import com.company.testElection.offices.*;
+import testElection.offices.*;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
