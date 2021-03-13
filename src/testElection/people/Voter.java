@@ -66,7 +66,7 @@ public class Voter extends Person {
     }
 
     private static void readVoterID() throws FileNotFoundException {
-        Scanner readVoterID = new Scanner(new FileInputStream("src/files/VoterIDs.txt"));
+        Scanner readVoterID = new Scanner(new FileInputStream("src/testElection/files/VoterIDs.txt"));
         while (readVoterID.hasNextLine()) {
             addVoterID(Long.parseLong(readVoterID.nextLine()));
         }

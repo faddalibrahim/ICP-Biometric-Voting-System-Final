@@ -92,7 +92,7 @@ public class Candidate extends Person {
     }
 
     private static void readCandidates() throws FileNotFoundException {
-        Scanner readCandidates = new Scanner(new FileInputStream("src/files/Candidates.txt"));
+        Scanner readCandidates = new Scanner(new FileInputStream("src/testElection/files/Candidates.txt"));
         while (readCandidates.hasNextLine()) {
             addCandidate(readCandidates.nextLine());
         }
