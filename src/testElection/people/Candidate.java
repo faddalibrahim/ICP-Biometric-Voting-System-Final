@@ -1,10 +1,13 @@
 package testElection.people;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Scanner;
 
 /**
  * @author Faddal Ibrahim
@@ -82,6 +85,28 @@ public class Candidate extends Person {
 
         return candidatesMap;
     }
+
+
+    private static void addCandidate(String candidate) {
+        candidateList.add(candidate);
+    }
+
+    private static void readCandidates() throws FileNotFoundException {
+        Scanner readCandidates = new Scanner(new FileInputStream("src/files/Candidates.txt"));
+        while (readCandidates.hasNextLine()) {
+            addCandidate(readCandidates.nextLine());
+        }
+    }
+
+    public static ArrayList<String> getCandidateList() {
+        try {
+            readCandidates();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        return candidateList;
+    }
+
 
 
 }
