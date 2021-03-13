@@ -1,6 +1,6 @@
 package testElection.offices;
 
-import com.company.testElection.offices.DistrictElectoralOffice;
+import testElection.offices.DistrictElectoralOffice;
 
 import java.util.ArrayList;
 import java.util.HashMap;

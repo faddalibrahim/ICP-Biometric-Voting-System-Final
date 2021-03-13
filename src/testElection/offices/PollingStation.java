@@ -1,7 +1,7 @@
 package testElection.offices;
 
-import com.company.testElection.people.Candidate;
-import com.company.testElection.people.Voter;
+import testElection.people.Candidate;
+import testElection.people.Voter;
 
 import java.util.ArrayList;
 import java.util.HashMap;
