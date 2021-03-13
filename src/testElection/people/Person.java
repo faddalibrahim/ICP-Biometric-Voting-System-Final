@@ -1,9 +1,9 @@
-package model;
+package testElection.people;
 
-import java.sql.*;
-import java.util.HashMap;
+import java.sql.Connection;
+import java.sql.DriverManager;
 
-public abstract class Person implements PersonInterface {
+public class Person {
     private double id;
     private String name;
     private String dob;
@@ -73,7 +73,7 @@ public abstract class Person implements PersonInterface {
      * Mutator Method:setId()
      * @param newId
      */
-    public void setId(double newId){
+    public void setName(double newId){
         this.id = newId;
     }
 
@@ -101,24 +101,5 @@ public abstract class Person implements PersonInterface {
         this.name = newGender;
     }
 
-    /**
-     * Mutator Method:setAuthStatus()
-     * @param newAuthStatus
-     */
-    public void setAuthStatus(int newAuthStatus){
-        this.authStatus = newAuthStatus;
-    }
-
-    public static Connection getConnection(){
-        Connection conn;
-        try {
-            conn = DriverManager.getConnection(Database.getUrl(), Database.getUser(), Database.getPassword());
-            System.out.println("yoooo database is connected successfully");
-            return conn;
-        } catch (Exception err) {
-            System.out.println(err.getMessage());
-            return null;
-        }
-    }
 
 }
