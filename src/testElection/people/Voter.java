@@ -1,7 +1,6 @@
 package testElection.people;
 
 import testElection.offices.*;
-
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -67,10 +66,11 @@ public class Voter extends Person {
     }
 
     private static void readVoterID() throws FileNotFoundException {
-        Scanner readVoterID = new Scanner(new FileInputStream("/files/voterIDs.txt"));
+        Scanner readVoterID = new Scanner(new FileInputStream("src/files/VoterIDs.txt"));
         while (readVoterID.hasNextLine()) {
             addVoterID(Long.parseLong(readVoterID.nextLine()));
         }
+        readVoterID.close();
     }
 
     public static ArrayList<Long> getVoterIDList() {
