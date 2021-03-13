@@ -10,7 +10,7 @@ public class PollingStation {
     private String pollingStationID;
     private int totalVotes = 0;
     private String districtID;
-    private static HashMap<Candidate, Integer> candidateVotes;
+    private static HashMap<String, Integer> candidateVotes;
     private static ArrayList<String> pollingStationIDs = new ArrayList<>();
 
 
@@ -37,7 +37,7 @@ public class PollingStation {
         return totalVotes;
     }
 
-    public static HashMap<Candidate, Integer> getCandidateVotes() {
+    public static HashMap<String, Integer> getCandidateVotes() {
         return candidateVotes;
     }
 
@@ -46,4 +46,17 @@ public class PollingStation {
         pollingStationIDs.add(ID);
     }
 
+    //Adding candidates and their respective votes
+    private static void addCandidate() {
+        for (String candidate : Candidate.getCandidateList()) {
+            candidateVotes.put(candidate, 0);
+        }
+    }
+
+    public static void setCandidateVotes(int serialNum, String candidate) {
+        addCandidate();
+        int vote = candidateVotes.get(candidate);
+        PollingStation.candidateVotes.replace(candidate, ++vote);
+
+    }
 }
