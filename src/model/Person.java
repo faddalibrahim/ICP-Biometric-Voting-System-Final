@@ -109,6 +109,10 @@ public abstract class Person implements PersonInterface {
         this.authStatus = newAuthStatus;
     }
 
+    /**
+     * attempts to establish a connection to a database
+     * @return Connection
+     */
     public static Connection getConnection(){
         Connection conn;
         try {

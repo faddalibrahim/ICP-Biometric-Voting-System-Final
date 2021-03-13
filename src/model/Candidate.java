@@ -74,6 +74,10 @@ public class Candidate extends Person{
     }
 
 
+    /**
+     * returns the list of candidates from the database
+     * @return candidateList
+     */
     public static HashMap<String, model.Candidate> getCandidates() {
         HashMap<String, model.Candidate> candidatesMap = new HashMap();
 

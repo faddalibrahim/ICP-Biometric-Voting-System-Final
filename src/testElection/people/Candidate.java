@@ -11,6 +11,7 @@ import java.util.Scanner;
 
 /**
  * @author Faddal Ibrahim
+ * @author Excel Chukwu
  * class:Candidate
  * Accessibility Modifier:public
  */
@@ -79,6 +80,10 @@ public class Candidate extends Person {
     }
 
 
+    /**
+     * getCandidates is an accessor method for returning the candidate map
+     * @return candidateMap
+     */
     public static HashMap<String, Candidate> getCandidates() {
         HashMap<String, Candidate> candidatesMap = new HashMap();
 
@@ -87,10 +92,18 @@ public class Candidate extends Person {
     }
 
 
+    /**
+     * adds a candidate to a list of available candidates
+     * @param candidate
+     */
     private static void addCandidate(String candidate) {
         candidateList.add(candidate);
     }
 
+    /**
+     * reads the list of candidates from a file and adds it to the list of candidates
+     * @throws FileNotFoundException
+     */
     private static void readCandidates() throws FileNotFoundException {
         Scanner readCandidates = new Scanner(new FileInputStream("src/testElection/files/Candidates.txt"));
         while (readCandidates.hasNextLine()) {
@@ -98,6 +111,10 @@ public class Candidate extends Person {
         }
     }
 
+    /**
+     * returns the list of candidates
+     * @return candidateList
+     */
     public static ArrayList<String> getCandidateList() {
         try {
             readCandidates();

@@ -1,7 +1,12 @@
 package testElection.people;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
+
+/**
+ * @author Faddal Ibrahim
+ * @author Excel Chukwu
+ * class:Person
+ * Accessibility Modifier:public
+ */
 
 public class Person {
     private double id;

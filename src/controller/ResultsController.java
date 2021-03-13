@@ -30,6 +30,11 @@ public class ResultsController implements Initializable {
         fetchResults();
     }
 
+
+    /**
+     * fetches the current results of the election
+     * from the database
+     */
     private void fetchResults(){
         Connection conn = Voter.getConnection();
         String query = "SELECT * FROM candidates";

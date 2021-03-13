@@ -65,6 +65,11 @@ public class MainPageController {
 
     }
 
+    /**
+     * changes the scene to the voting scene when the vote button
+     * is clicked
+     * @throws IOException
+     */
     private void changeSceneOnVoteButtonClick() throws IOException {
 
 
@@ -82,6 +87,11 @@ public class MainPageController {
         //System.out.println(newVoter.getGender());
     }
 
+    /**
+     * changes the scene to the results scene when the results button
+     * is clicked
+     * @throws IOException
+     */
     private void changeSceneOnResultsButtonClick() throws IOException {
         //mainPageVoteButton.getScene().getWindow().hide();
         Stage resultsStage = (Stage) mainPageResultsButton.getScene().getWindow();
@@ -93,6 +103,11 @@ public class MainPageController {
         resultsStage.show();
     }
 
+    /**
+     * changes the scene to the 'log in' scene
+     * when the logout button is clicked
+     * @throws IOException
+     */
     private void logout() throws IOException{
         Stage logoutStage = (Stage) mainPageVoteButton.getScene().getWindow();
 
@@ -102,6 +117,11 @@ public class MainPageController {
         logoutStage.show();
     }
 
+    /**
+     * Gets the voter's name and uses it to welcome
+     * him/her in the main page.
+     * @param voter
+     */
     public void getVoterFromLoginPage(Voter voter){
         System.out.println(voter.getName());
         newVoter = voter;

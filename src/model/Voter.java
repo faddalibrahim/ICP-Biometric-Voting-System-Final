@@ -54,6 +54,13 @@ public class Voter extends Person {
         return ballotCount;
     }
 
+    /**
+     * updates the number of votes for the candidate in the database
+     * @param candidate
+     * @param voter
+     * @return boolean
+     */
+
     public boolean castVote(Candidate candidate, Voter voter){
         Connection conn = Voter.getConnection();
         PreparedStatement st;
@@ -84,6 +91,12 @@ public class Voter extends Person {
         return true;
     }
 
+    /**
+     * authenticates the voter by checking
+     * if he/she is in database of registered voters
+     * @param voterId
+     * @return Voter
+     */
     public static Voter authenticate(double voterId){
         Connection conn = Voter.getConnection();
         PreparedStatement st;

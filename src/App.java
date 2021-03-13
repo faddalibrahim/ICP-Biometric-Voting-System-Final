@@ -6,6 +6,15 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+
+/**
+ * @author Faddal Ibrahim
+ * @author Excel Chukwu
+ * class:App
+ * Accessibility Modifier:public
+ *
+ * serves as launching pad for JavaFXApp
+ */
 public class App extends Application {
     public static void main(String[] args) {
         launch(args);

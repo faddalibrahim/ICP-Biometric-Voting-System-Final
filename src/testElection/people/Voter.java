@@ -6,6 +6,13 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+
+/**
+ * @author Faddal Ibrahim
+ * @author Excel Chukwu
+ * class:Voter
+ * Accessibility Modifier:public
+ */
 public class Voter extends Person {
     private String pollingStationCode;
     private static int ballotCount = 0;
@@ -54,6 +61,13 @@ public class Voter extends Person {
         return ballotCount;
     }
 
+    /**
+     * this method casts the vote when a voter chooses which candidate
+     * to vote for
+     * @param candidate
+     * @param voter
+     * @return
+     */
     private boolean castVote(Candidate candidate, Voter voter) {
         int currentCandidateVote = PollingStation.getCandidateVotes().get(candidate);
         currentCandidateVote += PollingStation.getCandidateVotes().get(candidate);
@@ -61,10 +75,18 @@ public class Voter extends Person {
         return true;
     }
 
+    /**
+     * adds a voter ID to a list of voter IDs
+     * @param ID
+     */
     private static void addVoterID(Long ID) {
         voterIDList.add(ID);
     }
 
+    /**
+     * reads from a file of voter IDs and populates the voterID list
+     * @throws FileNotFoundException
+     */
     private static void readVoterID() throws FileNotFoundException {
         Scanner readVoterID = new Scanner(new FileInputStream("src/testElection/files/VoterIDs.txt"));
         while (readVoterID.hasNextLine()) {
@@ -73,6 +95,10 @@ public class Voter extends Person {
         readVoterID.close();
     }
 
+    /**
+     * returns a list of the voter IDs
+     * @return voterIDList
+     */
     public static ArrayList<Long> getVoterIDList() {
         try {
             readVoterID();

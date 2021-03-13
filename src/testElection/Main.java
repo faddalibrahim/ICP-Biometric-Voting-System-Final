@@ -28,6 +28,10 @@ public class Main {
         int serialNum = consoleInput.nextInt();
         mainVote(serialNum);
 
+        System.out.println("Thank you for voting!");
+        System.out.println("Results so far: \n");
+        displayResults();
+
     }
 
 
@@ -61,5 +65,9 @@ public class Main {
                 PollingStation.setCandidateVotes(4, "4. PNC - Excel Chukwu");
                 break;
         }
+    }
+
+    private static void displayResults() {
+        System.out.println(PollingStation.getCandidateVotes());
     }
 }

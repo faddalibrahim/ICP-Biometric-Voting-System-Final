@@ -56,6 +56,13 @@ public class LoginController implements Initializable {
 
     }
 
+    /**
+     * Authenticates the voter to see if:
+     * 1. voter is registered
+     * 2. Voter has already voted
+     * @throws IOException
+     * @throws NumberFormatException
+     */
     private void authenticateVoter() throws IOException, NumberFormatException {
         double voterId = Double.parseDouble(loginVoterID.getText());
         Voter voter = Voter.authenticate(voterId);
@@ -72,6 +79,12 @@ public class LoginController implements Initializable {
 
     }
 
+    /**
+     * goes to the main page from the click of the
+     * 'Authenticate' button
+     * @param voter
+     * @throws IOException
+     */
     private void goToMainPage(Voter voter) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/mainPage.fxml"));
         Parent mainPageRoot = loader.load();
